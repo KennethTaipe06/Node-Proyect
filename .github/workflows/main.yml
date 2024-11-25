@@ -8,6 +8,17 @@ jobs:
     build:
         runs-on: ubuntu-latest
 
+        
         steps:
-            - name: 'Mostrar mensaje'
-              run: echo 'Hola, mundo!'
+            - name: 'Configurar clave SSH'
+              run: |
+                echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
+                chmod 400 key.pem
+            - name: 'Conectar a EC2 y borrar carpeta'
+              run: |
+                ssh -i key.pem ec2-user@ec2-3-84-26-23.compute-1.amazonaws.com "rm -rf /downloads/Node-Proyect"
+            - name: 'Clonar repositorio en EC2'
+              run: |
+                ssh -i key.pem ec2-user@ec2-3-84-26-23.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/Node-Proyect.git /downloads/Node-Proyect"
+            - name: 'Eliminar clave SSH'
+              run: rm key.pem
