@@ -17,10 +17,10 @@ jobs:
                 
             - name: 'Conectar a EC2 y Actualizando repositorio'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-221-98-222.compute-1.amazonaws.com "rm -rf  /var/www/html"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-91-200-136.compute-1.amazonaws.com "rm -rf  /var/www/html"
             - name: 'Clonar repositorio en EC2'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-221-98-222.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-91-200-136.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
             - name: 'Eliminar clave SSH'
               run: rm key.pem
               
@@ -32,10 +32,10 @@ jobs:
 
             - name: 'Conectar a EC2 y Actualizando repositorio'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-23-22-126-198.compute-1.amazonaws.com "rm -rf  /var/www/html"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-3-82-92-140.compute-1.amazonaws.com "rm -rf  /var/www/html"
             - name: 'Clonar repositorio en EC2'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-23-22-126-198.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-3-82-92-140.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
             - name: 'Eliminar clave SSH'
               run: rm key.pem 
             
