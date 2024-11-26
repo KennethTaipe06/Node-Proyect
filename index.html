@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>  
   <body>
-    <p><?php echo "hostname is:".gethostname(); ?></p>
+    <p id="hostname"></p>
+    <script>
+      document.getElementById("hostname").innerText = "My name is <?php echo gethostname(); ?>";
+    </script>
   </body>
 </html>
