@@ -1,9 +1,1 @@
-<!DOCTYPE html>
-<html>  
-  <body>
-    <p id="hostname"></p>
-    <script>
-      document.getElementById("hostname").innerText = "My name is " + window.location.hostname;
-    </script>
-  </body>
-</html>
+My name is $(hostname -f)
