@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +32,19 @@
     </style>
 </head>
 <body>
-    Hola Mundo desde $(hostname -f)
-    <img src="img\download.png" alt="Imagen centrada">
+    <h1>Hola Mundo desde <span id="server-ip">cargando...</span></h1>
+    <img src="img/download.png" alt="Imagen centrada">
+    <script>
+        // Obtener la IP del servidor desde un servicio externo
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('server-ip').textContent = data.ip;
+            })
+            .catch(error => {
+                console.error('Error al obtener la IP:', error);
+                document.getElementById('server-ip').textContent = 'Error al obtener la IP';
+            });
+    </script>
 </body>
 </html>
