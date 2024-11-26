@@ -23,7 +23,12 @@ jobs:
                 ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-221-98-222.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
             - name: 'Eliminar clave SSH'
               run: rm key.pem
-
+              
+            - name: 'Configurando SSH'
+              run: |
+                echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
+                
+                chmod 400 key.pem
 
             - name: 'Conectar a EC2 y Actualizando repositorio'
               run: |
