@@ -23,7 +23,7 @@ jobs:
                 ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-52-23-227-177.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
             - name: 'Reiniciar Servicio'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-52-23-227-177.compute-1.amazonaws.com "systemctl restart nginx"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-52-23-227-177.compute-1.amazonaws.com "sudo systemctl restart nginx"
             - name: 'Eliminar clave SSH'
               run: rm key.pem
 
@@ -42,6 +42,6 @@ jobs:
                 ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-90-71-58.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
             - name: 'Reiniciar Servicio'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-90-71-58.compute-1.amazonaws.com "systemctl restart nginx"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-90-71-58.compute-1.amazonaws.com "sudo systemctl restart nginx"
             - name: 'Eliminar clave SSH'
               run: rm key.pem
