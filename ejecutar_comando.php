@@ -10,6 +10,6 @@ echo "<h1>Host: $hostname</h1>";
     <title>Información del Host</title>
 </head>
 <body>
-    <p>Esta página muestra el nombre del host de la máquina en la que se está ejecutando. test2</p>
+    <p>Esta página muestra el nombre del host de la máquina en la que se está ejecutando. test3</p>
 </body>
 </html>
