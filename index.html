@@ -6,6 +6,13 @@
     <title>Hostname</title>
 </head>
 <body>
-    <p>My name is <?php echo gethostname(); ?></p>
+    <p id="hostname">Loading...</p>
+    <script>
+        fetch('/hostname')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('hostname').innerText = "My name is " + data;
+            });
+    </script>
 </body>
 </html>

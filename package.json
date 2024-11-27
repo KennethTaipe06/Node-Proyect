@@ -9,6 +9,7 @@
   "author": "Kenneth Taipe",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "os": "^0.1.2"
   }
 }
