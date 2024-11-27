@@ -17,13 +17,13 @@ jobs:
                 
             - name: 'Conectar a EC2 y Actualizando repositorio'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-52-23-227-177.compute-1.amazonaws.com "rm -rf  /var/www/html"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-44-208-26-86.compute-1.amazonaws.com "rm -rf  /var/www/html"
             - name: 'Clonar repositorio en EC2'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-52-23-227-177.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-44-208-26-86.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
             - name: 'Reiniciar Servicio'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-52-23-227-177.compute-1.amazonaws.com "sudo systemctl restart nginx"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-44-208-26-86.compute-1.amazonaws.com "sudo systemctl restart nginx"
             - name: 'Eliminar clave SSH'
               run: rm key.pem
 
@@ -36,12 +36,12 @@ jobs:
                 
             - name: 'Conectar a EC2 y Actualizando repositorio'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-90-71-58.compute-1.amazonaws.com "rm -rf  /var/www/html"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-18-206-157-20.compute-1.amazonaws.com "rm -rf  /var/www/html"
             - name: 'Clonar repositorio en EC2'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-90-71-58.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-18-206-157-20.compute-1.amazonaws.com "git clone https://github.com/KennethTaipe06/html.git /var/www/html"
             - name: 'Reiniciar Servicio'
               run: |
-                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-54-90-71-58.compute-1.amazonaws.com "sudo systemctl restart nginx"
+                ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@ec2-18-206-157-20.compute-1.amazonaws.com "sudo systemctl restart nginx"
             - name: 'Eliminar clave SSH'
               run: rm key.pem
